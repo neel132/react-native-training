@@ -10,3 +10,4 @@
 2. Practice on all React Native Components
 3. React Native API's
 4. Practice on React Native API's
+5. Styling in React native
