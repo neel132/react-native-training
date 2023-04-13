@@ -11,3 +11,5 @@
 3. React Native API's
 4. Practice on React Native API's
 5. Styling in React native
+6. Flexbox
+7. Task to create a calculator
