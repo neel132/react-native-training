@@ -13,3 +13,7 @@
 5. Styling in React native
 6. Flexbox
 7. Task to create a calculator
+
+### Day 3
+1. Class Components vs Functional Components
+2. State & Props
