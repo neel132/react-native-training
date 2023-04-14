@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { SafeAreaView, Text } from 'react-native';
 import Strings from '../../utils/Strings';
+import Button from '../../Components/Button';
 
 // Class approach
 class Profile extends Component {
@@ -11,6 +12,12 @@ class Profile extends Component {
 			counter: 0,
 		};
 	}
+	onPress = () => {
+		this.setState({
+			counter: this.state.counter + 1,
+		})
+	}
+	
 	render() {
 		console.log("render method invoked -");
 		const {counter} = this.state;
@@ -19,17 +26,17 @@ class Profile extends Component {
 				<Text style={{fontSize: 30, textAlign: 'center'}}>
 					{`${Strings.label} - ${counter}`}
 				</Text>
+				<Button onPress={this.onPress} />
 			</SafeAreaView>
 		)
 	}
 	componentDidMount() {
-		// callingApi();
-		setInterval(() => {
-			this.setState({
-				...this.state,
-				counter: this.state.counter + 1
-			})
-		}, 1000); // 1000 ms = 1sec
+		// setInterval(() => {
+		// 	this.setState({
+		// 		...this.state,
+		// 		counter: this.state.counter + 1
+		// 	})
+		// }, 1000); // 1000 ms = 1sec
 		// It gets called after render method.
 		console.log("componentDidMount method invoked -");
 	}

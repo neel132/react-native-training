@@ -16,4 +16,8 @@
 
 ### Day 3
 1. Class Components vs Functional Components
-2. State & Props
+2. State & Props in Functional Components
+3. State & Props in Class Components
+4. Conditional Rendering
+5. Hooks - (useState & useEffect)
+6. 
