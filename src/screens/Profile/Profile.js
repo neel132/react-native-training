@@ -3,6 +3,7 @@ import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import Strings from '../../utils/Strings';
 import Button from '../../Components/Button';
 import Counter from '../../Components/Counter';
+import NavigationKeys from '../../navigation/keys';
 
 /*
 
@@ -12,7 +13,9 @@ Props - Props is immutable
 */
 
 // Functional approach
-const Profile = () => {
+const Profile = (props) => {
+	const {navigation, route} = props;
+
 	const [counter, setCounter] = useState(0);
 	/*
 		1. If we pass empty dependency array that means it will run once
@@ -23,10 +26,14 @@ const Profile = () => {
 	const onPress = () => {
 		setCounter(counter + 1);
 	}
+	const navigateTo = () => {
+		navigation.navigate(NavigationKeys.home);
+	}
 	return (
 		<SafeAreaView>
 			<Counter counter={counter} />
 			<Button label={Strings.add} onPress={onPress} />
+			<Button label={Strings.navigateToHome} onPress={navigateTo} />
 		</SafeAreaView>
 	)
 }
