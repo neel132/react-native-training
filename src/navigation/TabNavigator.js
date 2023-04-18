@@ -7,7 +7,13 @@ const BottomTabs = createBottomTabNavigator();
 const Tabs = () => {
 	return (
 		<BottomTabs.Navigator>
-			<BottomTabs.Screen name={NavigationKeys.profile} component={Profile}/>
+			<BottomTabs.Screen
+			 	name={NavigationKeys.profile}
+				component={Profile}
+				options={{
+					// tabBarIcon: 
+				}}
+			/>
 			<BottomTabs.Screen name={NavigationKeys.home} component={Home} />
 		</BottomTabs.Navigator>
 	)

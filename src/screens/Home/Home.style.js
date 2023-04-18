@@ -4,8 +4,7 @@ const HomeStyles = StyleSheet.create({
 	container: {
 		flex: 1,
 		flexDirection: 'column',
-		borderWidth: 5,
-		borderColor: 'red',
+		borderWidth: 1,
 	},
 	listContainer: {
 		flex: 0.5,
@@ -14,7 +13,7 @@ const HomeStyles = StyleSheet.create({
 	},
 	listInnerContainer: {
 		minHeight: 40,
-		// borderWidth: 1,
+		borderWidth: 1,
 	},
 	contentContainer: {
 		flex: 0.5,

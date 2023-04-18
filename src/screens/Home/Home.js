@@ -1,32 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FlatList, Text, View } from 'react-native';
 import { HomeStyles as styles } from './Home.style';
+import { getEmployeeData } from '../../server_apis/employee_apis';
 
 const Home = () => {
-  const renderItem = ({item, index}) => {
+	const [employeeData, setEmployeeData] = useState([]);
+	useEffect(() => {
+		getEmployeeData().then(employees => {
+			console.log("employees -", employees?.length);
+			if(employeeData?.length === 0 && employees) { // Business Logic
+				setEmployeeData(employees)
+			}
+		});
+	}, [employeeData]);
+  const renderItem = ({item}) => {
+		console.log("Render Item List -", item);
     return (
 			<View style={styles.listInnerContainer}>
 				<Text style={[styles.textItem, styles.textColor]}>
-					{`Item No. ${index + 1}`}
+					{`Employee Name - ${item.employee_name}`}
 				</Text>
 			</View>
     )
   }
+	console.log("employeeData => ", employeeData);
   return (
     <View style={styles.container}>
-			<View style={styles.listContainer}>
-				<FlatList
-					data={[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]}
-					renderItem={renderItem}
-				/>
-			</View>
-			<View style={styles.contentContainer}>
-				<View style={styles.floatingText}>
-					<Text>Floating text...</Text>
-				</View>
-				<Text style={styles.textItem}>1</Text>
-				<Text style={styles.textItem}>2</Text>
-			</View>
+			<FlatList
+				data={employeeData}
+				renderItem={renderItem}
+			/>
     </View>
   )
 }
