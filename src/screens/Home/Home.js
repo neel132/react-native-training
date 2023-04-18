@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, Text, View } from 'react-native';
 import { HomeStyles as styles } from './Home.style';
 import { getEmployeeData } from '../../server_apis/employee_apis';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
 	const [employeeData, setEmployeeData] = useState([]);
+	const {value} = useSelector(state => state.counter);
+	console.log("Reading Value from Home Component => ", value);
 	useEffect(() => {
 		getEmployeeData().then(employees => {
 			console.log("employees -", employees?.length);
