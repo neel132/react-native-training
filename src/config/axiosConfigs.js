@@ -6,6 +6,10 @@ const axiosInstance = axios.create({
 	headers: {},
 })
 
+const getToken = () => {
+	return 'token';
+}
+
 // Add a request interceptor
 axiosInstance.interceptors.request.use(function (config) {
 	const token = getToken();
