@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import Strings from '../../utils/Strings';
 import Button from '../../Components/Button';
@@ -6,6 +6,7 @@ import Counter from '../../Components/Counter';
 import NavigationKeys from '../../navigation/keys';
 import { useDispatch, useSelector } from 'react-redux';
 import { decrementCounter, incrementCounter, setCounter } from '../../reducers/counterReducer';
+import { ThemeContext } from '../../../App';
 
 /*
 
@@ -19,6 +20,8 @@ const Profile = (props) => {
 	const {navigation, route} = props;
 	const {value} = useSelector(state => state.counter);
 	const dispatch = useDispatch();
+	const {theme, changeTheme} = useContext(ThemeContext);
+	console.log("Value of Theme Context => ", theme);
 	console.log("counterFromReducer => ", value);
 	// const [counter, setCounter] = useState(0);
 	/*
@@ -47,6 +50,8 @@ const Profile = (props) => {
 			<Button label={Strings.sub} onPress={onDecrement} />
 			<Button label={Strings.setValue} onPress={setValue} />
 			<Button label={Strings.navigateToHome} onPress={navigateTo} />
+			<Text style={{textAlign: 'center', fontSize: 24,}}>Current theme -{theme}</Text>
+			<Button label={Strings.toggleTheme} onPress={changeTheme} />
 		</SafeAreaView>
 	)
 }
