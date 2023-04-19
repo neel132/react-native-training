@@ -27,3 +27,11 @@
 3. Adding release signingConfig in app/build.gradle
 4. Generate .aab file from android folder - ./gradlew bundleRelease || if you apk then ./gradlew assembleRelease
 5. Pick the file from /android/app/build/outputs/bundle/release/app-release.aab || if apk then /android/app/build/outputs/apk/release/app-release.apk
+
+### Steps to release IOS app -
+1. Create Identifier
+2. Create Certicates
+3. Create Profiles
+4. Integration of certificates and profiles in project
+5. Clean the build project
+6. Archiving the project which leads to upload of .ipa directly to Testflight or you can export it.
