@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useContext} from 'react';
-import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
+import React, {useContext} from 'react';
+import { SafeAreaView, Text } from 'react-native';
 import Strings from '../../utils/Strings';
 import Button from '../../Components/Button';
 import Counter from '../../Components/Counter';

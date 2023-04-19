@@ -20,4 +20,10 @@
 3. State & Props in Class Components
 4. Conditional Rendering
 5. Hooks - (useState & useEffect)
-6. 
+
+### Steps to release Android app -
+1. Clean the build - ./gradlew clean
+2. Add Jdk & create release keystore file with strong password - Lc21HVjv%^#A5,fd#3M?eh*@
+3. Adding release signingConfig in app/build.gradle
+4. Generate .aab file from android folder - ./gradlew bundleRelease || if you apk then ./gradlew assembleRelease
+5. Pick the file from /android/app/build/outputs/bundle/release/app-release.aab || if apk then /android/app/build/outputs/apk/release/app-release.apk
