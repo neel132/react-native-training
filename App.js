@@ -1,6 +1,7 @@
-import React, {createContext, useMemo, useState} from 'react';
+import React, {createContext, useEffect, useMemo, useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import messaging from "@react-native-firebase/messaging";
 import NavigationKeys from './src/navigation/keys';
 import Tabs from './src/navigation/TabNavigator';
 import { Provider } from 'react-redux';
@@ -21,6 +22,23 @@ const App = () => {
     theme,
     changeTheme,
   }), [theme])
+  useEffect(() => {
+    messaging().getToken().then(fcmToken => console.log("FCM Token => ", fcmToken))
+  })
+  useEffect(() => {
+    // For listening a remote notification in foreground...
+    const unsubscribe = messaging().onMessage(async(remoteMessage) => {
+      console.log("Remote Messaging -", JSON.stringify(remoteMessage));
+    })
+    return unsubscribe;
+  }, []);
+  useEffect(() => {
+    // For listening a remote notification in background...
+    const unsubscribe = messaging().setBackgroundMessageHandler(async remoteMessage => {
+      console.log('Message handled in the background!', remoteMessage);
+    });
+    return unsubscribe;
+  }, []);
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "72088825767",
+    "project_id": "rnpushnotificationtest-f544d",
+    "storage_bucket": "rnpushnotificationtest-f544d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72088825767:android:db8b611f2ac5f7439e5082",
+        "android_client_info": {
+          "package_name": "com.awesomernproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72088825767-an3cno4t8tr544l6kqtv30632m4bf5dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtwCiRDIGCL6WcRBgQTVuGxYDly9dOBoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72088825767-an3cno4t8tr544l6kqtv30632m4bf5dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
